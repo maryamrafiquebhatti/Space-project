@@ -654,74 +654,114 @@ body {
 
 }
 
-/* Grid container for Technology page */
-.grid-container--technology {
+/* General Styles */
+body {
+    font-family: 'Barlow', sans-serif;
+  }
+  
+  header nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    margin-right: 1rem;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  header nav ul li a.active {
+    font-weight: 300;
+  }
+  
+
+
+  /* Technology layout */
+  .grid-container--technology {
     display: grid;
-    --flow-space: 2rem;
     grid-template-areas: 
-      'title'
-      'image'
-      'tabs'
-      'content';
-    gap: var(--flow-space);
+      "title title"
+      "content image"
+      "nav nav";
+    grid-template-columns: 1fr 1fr;
     padding: 2rem;
+    gap: 0.5rem;
   }
   
-  .grid-container--technology > .title {
+  .grid-container--technology .numbered-title {
     grid-area: title;
-    font-size: 2.5rem;
     text-align: center;
-    text-transform: uppercase;
+    font-size: 4rem; /* Increase the heading size */
+    font-family: 'Bellefair', serif; /* Matching font style */
+    margin-bottom: 2rem; /* Adjust spacing below title */
   }
   
-  .grid-container--technology > .technology-image {
+  .grid-container--technology .tech-info {
+    grid-area: content;
+    text-align: left;
+    margin-right: 100 px;
+    margin-left: 1000 px;
+    /* Reduce space between content and image */
+  }
+  
+  .grid-container--technology picture {
     grid-area: image;
-    max-width: 60%;
-    margin: 0 auto;
+    max-width: 100%;
+    justify-self: end;
+  }
+
+  .grid-container--technology > .tech-info {
+    margin-right: 0; /* Ensure there's no margin pushing the content away */
+  }
+
+  .grid-container--technology > picture {
+    padding-right: 0; /* Adjust padding if necessary */
   }
   
-  .grid-container--technology > .tab-list {
-    grid-area: tabs;
+  .grid-container--technology > .tech-info {
+    padding-left: 0; /* Adjust padding if necessary */
+  }
+  
+
+
+
+  .grid-container--technology .tech-navigation {
+    grid-area: nav;
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 2rem; /* Space between content and navigation buttons */
   }
   
-  .grid-container--technology > .technology-info {
-    grid-area: content;
-    text-align: center;
-  }
-  
-  .technology-info h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-  }
-  
-  .technology-info h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .technology-info p {
-    font-size: 1.25rem;
-    line-height: 1.75;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  /* Button styling */
-  .tab-list button {
-    background-color: transparent;
+  .tech-nav {
+    background-color: #333;
     color: white;
-    border: 1px solid white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.25rem;
-    cursor: pointer;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
   }
   
-  .tab-list button:hover {
-    background-color: white;
-    color: black;
+  .tech-nav.active {
+    background-color: orange;
+  }
+  
+  .tech-nav
+  {
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .tech-nav.active {
+    background-color: orange;
+  }
+  
+  .tech-nav:hover {
+    background-color: #555;
   }
